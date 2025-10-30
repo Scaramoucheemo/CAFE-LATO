@@ -1,15 +1,615 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CafeLato - La mejor experiencia de café artístico. Descubre nuestro menú único con toques kawaii y arte en cada taza.">
+    <meta name="keywords" content="café, coffee shop, café artístico, kawaii, latte art, cafetería">
+    <meta name="author" content="CafeLato">
+    <meta property="og:title" content="CafeLato - Café Artístico y Kawaii">
+    <meta property="og:description" content="Donde el arte se encuentra con el café">
+    <meta property="og:type" content="website">
+    <title>CAFELATO ☕ - Café Artístico Premium</title>
     <link rel="stylesheet" href="styles.css">
- <title>Mi sitio web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
- <h1>Bienvenidos a mi sitio web</h1>
- <p>Creado por: Perla Daniela Muñoz Trujillo - 2236001059</p>
+    <!-- Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <div class="coffee-cup">☕</div>
+            <p>Preparando tu experiencia...</p>
+        </div>
+    </div>
 
- <div id="liveAlertPlaceholder"></div>
-<button type="button" class="btn btn-primary" id="liveAlertBtn">Alert</button>
+    <!-- Navegación Premium -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#inicio" class="logo">
+                <span class="logo-icon">☕</span>
+                <span class="logo-text">CAFELATO</span>
+                <span class="logo-badge">Premium</span>
+            </a>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio" class="nav-link active" data-section="inicio">Inicio</a></li>
+                <li><a href="#quienes-somos" class="nav-link" data-section="quienes-somos">Quiénes Somos</a></li>
+                <li><a href="#productos" class="nav-link" data-section="productos">Productos</a></li>
+                <li><a href="#galeria" class="nav-link" data-section="galeria">Galería</a></li>
+                <li><a href="#blog" class="nav-link" data-section="blog">Blog</a></li>
+                <li><a href="#contacto" class="nav-link" data-section="contacto">Contacto</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="cart-btn" id="cartBtn" aria-label="Ver carrito">
+                    <span class="cart-icon">🛒</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                    <span class="cart-total-badge" id="cartTotalBadge">$0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero / Inicio -->
+    <section id="inicio" class="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="floating-shapes">
+                <span class="shape shape-1">☕</span>
+                <span class="shape shape-2">💕</span>
+                <span class="shape shape-3">⭐</span>
+                <span class="shape shape-4">🌸</span>
+                <span class="shape shape-5">✨</span>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text" data-aos="fade-right">
+                    <span class="hero-badge">✨ Nuevo Menú de Temporada</span>
+                    <h1 class="hero-title">
+                        El Arte del Café
+                        <span class="gradient-text">Hecho Realidad</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Donde cada taza cuenta una historia y cada sorbo es una experiencia única. 
+                        Descubre nuestro mundo de sabores artesanales con un toque cultural.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-label">Clientes Felices</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Bebidas Únicas</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5⭐</span>
+                            <span class="stat-label">Calificación</span>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#productos" class="btn btn-primary btn-large">
+                            <span>Explorar Menú</span>
+                            <span class="btn-icon">→</span>
+                        </a>
+                        <a href="#quienes-somos" class="btn btn-outline btn-large">
+                            <span>Nuestra Historia</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image" data-aos="fade-left">
+                    <div class="hero-card">
+                        <div class="card-coffee">☕</div>
+                        <div class="card-steam">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Quiénes Somos -->
+    <section id="quienes-somos" class="about-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">💖 Nuestra Historia</span>
+                <h2 class="section-title">¿Quiénes Somos?</h2>
+                <p class="section-description">
+                    Somos más que una cafetería, somos una experiencia sensorial donde el arte, 
+                    la cultura y el café premium se fusionan.
+                </p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-story" data-aos="fade-right">
+                    <div class="story-image">
+                        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800" alt="Interior de CafeLato" loading="lazy">
+                        <div class="story-badge">
+                            <span class="badge-icon">🎨</span>
+                            <span class="badge-text">Desde 2020</span>
+                        </div>
+                    </div>
+                    <div class="story-text">
+                        <h3>Nuestra Misión</h3>
+                        <p>
+                            Fundada en 2020 con la visión de crear un espacio donde el café de especialidad 
+                            se encuentra con el arte. Cada taza es preparada con amor y dedicación, 
+                            utilizando granos selectos de origen y técnicas artesanales.
+                        </p>
+                        <p>
+                            Creemos que el café es más que una bebida, es un momento para conectar, 
+                            crear y disfrutar de la vida.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="values-grid">
+                    <div class="value-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="value-icon">🌟</div>
+                        <h3>Calidad Premium</h3>
+                        <p>Granos selectos de las mejores fincas del mundo, tostados con precisión.</p>
+                    </div>
+                    <div class="value-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="value-icon">🎨</div>
+                        <h3>Arte en Cada Taza</h3>
+                        <p>Nuestros baristas son artistas certificados en latte art.</p>
+                    </div>
+                    <div class="value-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="value-icon">💚</div>
+                        <h3>Sustentabilidad</h3>
+                        <p>Comprometidos con el medio ambiente y comercio justo.</p>
+                    </div>
+                    <div class="value-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="value-icon">✨</div>
+                        <h3>Experiencia Única</h3>
+                        <p>Ambiente acogedor con diseño que te hará sentir especial.</p>
+                    </div>
+                </div>
+
+                <div class="team-section" data-aos="fade-up">
+                    <h3 class="team-title">Nuestro Equipo</h3>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="member-avatar">👩‍🍳</div>
+                            <h4>Ana García</h4>
+                            <p>Head Barista</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-avatar">👨‍💼</div>
+                            <h4>Carlos Ruiz</h4>
+                            <p>Founder & CEO</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-avatar">👩‍🎨</div>
+                            <h4>María López</h4>
+                            <p>Creative Director</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-avatar">👨‍🍳</div>
+                            <h4>Luis Torres</h4>
+                            <p>Pastry Chef</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos -->
+    <section id="productos" class="products-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">☕ Nuestro Menú</span>
+                <h2 class="section-title">Productos Artesanales</h2>
+                <p class="section-description">
+                    Descubre nuestra selección de bebidas premium, preparadas con amor y maestría.
+                </p>
+            </div>
+
+            <!-- Filtros y Búsqueda -->
+            <div class="products-controls" data-aos="fade-up">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Buscar bebida..." class="search-input">
+                    <span class="search-icon">🔍</span>
+                </div>
+                <div class="filter-buttons" id="categoryFilters">
+                    <button class="filter-btn active" data-category="all">Todos</button>
+                    <button class="filter-btn" data-category="caliente">☕ Calientes</button>
+                    <button class="filter-btn" data-category="frio">🧊 Fríos</button>
+                    <button class="filter-btn" data-category="especial">✨ Especiales</button>
+                    <button class="filter-btn" data-category="postres">🍰 Postres</button>
+                </div>
+            </div>
+
+            <!-- Grid de Productos -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Se llenará dinámicamente con JavaScript -->
+            </div>
+
+            <!-- Mensaje de "No hay resultados" -->
+            <div class="no-results" id="noResults" style="display: none;">
+                <div class="no-results-icon">😔</div>
+                <p>No encontramos productos con ese criterio</p>
+                <button class="btn btn-primary" onclick="clearSearch()">Ver todos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería -->
+    <section id="galeria" class="gallery-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">📸 Momentos</span>
+                <h2 class="section-title">Nuestra Galería</h2>
+                <p class="section-description">
+                    Explora nuestro mundo visual de café, arte y momentos especiales.
+                </p>
+            </div>
+
+            <div class="gallery-grid" data-aos="fade-up">
+                <div class="gallery-item gallery-large">
+                    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=800" alt="Latte Art" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3>Latte Art Profesional</h3>
+                        <p>Cada taza es una obra de arte</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600" alt="Café" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3>Granos Premium</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600" alt="Cafetería" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3>Ambiente Acogedor</h3>
+                    </div>
+                </div>
+                <div class="gallery-item gallery-tall">
+                    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600" alt="Cappuccino" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3>Cappuccino Perfecto</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600" alt="Café Helado" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3>Bebidas Frías</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?w=600" alt="Postres" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3>Postres Deliciosos</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog/Noticias -->
+    <section id="blog" class="blog-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">📰 Noticias</span>
+                <h2 class="section-title">Blog & Novedades</h2>
+                <p class="section-description">
+                    Mantente al día con las últimas tendencias, recetas y noticias del mundo del café.
+                </p>
+            </div>
+
+            <div class="blog-grid">
+                <article class="blog-card featured" data-aos="fade-up">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800" alt="Blog" loading="lazy">
+                        <span class="blog-badge">Destacado</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">20 Oct 2025</span>
+                            <span class="blog-category">☕ Café</span>
+                        </div>
+                        <h3>El Arte del Latte: Técnicas Profesionales</h3>
+                        <p>Descubre cómo nuestros baristas crean verdaderas obras de arte en cada taza. 
+                        Técnicas, secretos y pasión en cada diseño.</p>
+                        <a href="#" class="blog-link">Leer más →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=600" alt="Blog" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">18 Oct 2025</span>
+                            <span class="blog-category">✨ Novedades</span>
+                        </div>
+                        <h3>Nuevo Menú de Otoño</h3>
+                        <p>Sabores cálidos y especiados que celebran la temporada. ¡Prueba nuestras nuevas creaciones!</p>
+                        <a href="#" class="blog-link">Leer más →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600" alt="Blog" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">15 Oct 2025</span>
+                            <span class="blog-category">🌍 Sustentabilidad</span>
+                        </div>
+                        <h3>Nuestro Compromiso Verde</h3>
+                        <p>Conoce nuestras iniciativas ecológicas y cómo cada taza ayuda al planeta.</p>
+                        <a href="#" class="blog-link">Leer más →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=600" alt="Blog" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">10 Oct 2025</span>
+                            <span class="blog-category">🎉 Eventos</span>
+                        </div>
+                        <h3>Taller de Barismo: Inscripciones Abiertas</h3>
+                        <p>Aprende los secretos del café de especialidad con nuestros expertos baristas.</p>
+                        <a href="#" class="blog-link">Leer más →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="contact-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">📞 Hablemos</span>
+                <h2 class="section-title">Contáctanos</h2>
+                <p class="section-description">
+                    Estamos aquí para responder tus preguntas y hacer realidad tu experiencia perfecta.
+                </p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info-cards" data-aos="fade-right">
+                    <div class="info-card">
+                        <div class="info-icon-wrapper">
+                            <span class="info-icon">📍</span>
+                        </div>
+                        <h3>Ubicación</h3>
+                        <p>Av. del Arte #123</p>
+                        <p>Col. Kawaii, CP 12345</p>
+                        <p>Ciudad de México</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon-wrapper">
+                            <span class="info-icon">📞</span>
+                        </div>
+                        <h3>Teléfono</h3>
+                        <p>+52 (55) 1234-5678</p>
+                        <p>Lun - Dom: 8:00 AM - 10:00 PM</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon-wrapper">
+                            <span class="info-icon">✉️</span>
+                        </div>
+                        <h3>Email</h3>
+                        <p>hola@cafelato.com</p>
+                        <p>ventas@cafelato.com</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon-wrapper">
+                            <span class="info-icon">🌐</span>
+                        </div>
+                        <h3>Redes Sociales</h3>
+                        <div class="social-icons">
+                            <a href="#" aria-label="Instagram">📷</a>
+                            <a href="#" aria-label="Facebook">👍</a>
+                            <a href="#" aria-label="Twitter">🐦</a>
+                            <a href="#" aria-label="TikTok">🎵</a>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm" data-aos="fade-left">
+                    <h3>Envíanos un Mensaje</h3>
+                    
+                    <div class="form-group">
+                        <label for="name">Nombre Completo</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="form-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="form-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Teléfono (opcional)</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Asunto</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Selecciona un asunto</option>
+                            <option value="pedido">Realizar un Pedido</option>
+                            <option value="evento">Organizar un Evento</option>
+                            <option value="sugerencia">Sugerencia</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <span class="form-error"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large btn-block">
+                        <span>Enviar Mensaje</span>
+                        <span class="btn-icon">✉️</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Mapa -->
+            <div class="map-container" data-aos="fade-up">
+                <div class="map-placeholder">
+                    <span class="map-icon">🗺️</span>
+                    <p>Av. del Arte #123, Col. Kawaii</p>
+                    <p>Ciudad de México</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Premium -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">
+                            <span class="logo-icon">☕</span>
+                            <span class="logo-text">CafeLato</span>
+                        </div>
+                        <p class="footer-description">
+                            Donde el arte se encuentra con el café. Creando momentos especiales desde 2020.
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Instagram" class="social-link">📷</a>
+                            <a href="#" aria-label="Facebook" class="social-link">👍</a>
+                            <a href="#" aria-label="Twitter" class="social-link">🐦</a>
+                            <a href="#" aria-label="TikTok" class="social-link">🎵</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Enlaces Rápidos</h4>
+                        <ul class="footer-links">
+                            <li><a href="#inicio">Inicio</a></li>
+                            <li><a href="#quienes-somos">Quiénes Somos</a></li>
+                            <li><a href="#productos">Productos</a></li>
+                            <li><a href="#galeria">Galería</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Legal</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Términos y Condiciones</a></li>
+                            <li><a href="#">Política de Privacidad</a></li>
+                            <li><a href="#">Política de Cookies</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Newsletter</h4>
+                        <p>Suscríbete para ofertas exclusivas</p>
+                        <form class="newsletter-form" id="newsletterForm">
+                            <input type="email" placeholder="tu@email.com" required>
+                            <button type="submit" aria-label="Suscribirse">→</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 CafeLato. Todos los derechos reservados. Hecho con 💖 y ☕</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal del Carrito Premium -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-overlay"></div>
+        <div class="cart-modal-content">
+            <div class="cart-header">
+                <h2>Tu Carrito 🛒</h2>
+                <button class="cart-close" id="closeCart" aria-label="Cerrar carrito">
+                    <span>✕</span>
+                </button>
+            </div>
+
+            <div class="cart-body" id="cartItems">
+                <!-- Se llenará dinámicamente -->
+            </div>
+
+            <div class="cart-footer">
+                <div class="cart-coupon">
+                    <input type="text" id="couponInput" placeholder="Código de cupón">
+                    <button class="btn btn-secondary" id="applyCoupon">Aplicar</button>
+                </div>
+                
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-row discount-row" id="discountRow" style="display: none;">
+                        <span>Descuento:</span>
+                        <span id="discount" class="text-success">-$0.00</span>
+                    </div>
+                    <div class="summary-row total-row">
+                        <span>Total:</span>
+                        <span id="cartTotal">$0.00</span>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary btn-large btn-block" id="checkoutBtn">
+                    <span>Finalizar Compra</span>
+                    <span class="btn-icon">→</span>
+                </button>
+                <button class="btn btn-outline btn-block" id="continueShopping">
+                    Seguir Comprando
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Botón Scroll to Top -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Volver arriba">
+        <span>↑</span>
+    </button>
+
+    <script src="script.js"></script>
 </body>
-<script src="index.js"></script>
 </html>
